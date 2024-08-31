@@ -1,0 +1,28 @@
+body {
+    /*background-color: blue;*/
+}
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 45px;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+h4 {
+    font-size: 35px;
+}
+
+.page_title {
+    text-align: center;
+    font-size: 50px;
+}
+
+.default_style {
+    margin:8px;
+    /*background-color: gray;*/
+}
