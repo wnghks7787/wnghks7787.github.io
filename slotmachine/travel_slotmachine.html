@@ -9,6 +9,7 @@
         <button type="button" onclick="change_district()">어느 구를 갈까요?</button>
         <button type="button" onclick="change_neighborhood()">어느 동을 갈까요?</button>
         <p id="district"></p>
+        <p id="neighborhood"></p>
     </body>
 </HTML>
 
@@ -22,6 +23,8 @@
     const daedeok_gu = ['대화동', '덕암동', '목상동', '법1동', '법2동', '비래동', '석봉동', '송촌동', '신탄진동', '오정동', '중리동', '회덕동'];
 
     let district = '';
+    let neighborhood = '';
+    let district_size = 0;
 
     function change_district() {
         let random_num = Math.floor(Math.random() * 5);
@@ -29,9 +32,58 @@
         district = districts[random_num];
 
         document.getElementById("district").innerHTML = district;
+        district_size = check_district_size(district);
     }
 
     function change_neighborhood() {
+        let random_num = Math.floor(Math.random() * district_size);
 
+        switch(district) {
+            case '서구':
+                neighborhood = seo_gu[random_num];
+                break;
+            case '중구':
+                neighborhood = jung_gu[random_num];
+                break;
+            case '유성구':
+                neighborhood = yuseong_gu[random_num];
+                break;
+            case '동구':
+                neighborhood = dong_gu[random_num];
+                break;
+            case '대덕구':
+                neighborhood = daedeok_gu[random_num];
+                break;
+            default:
+                break;
+        }
+
+        document.getElementById("neighborhood").innerHTML = neighborhood;
+    }
+
+    function check_district_size(input_district) {
+        let return_val = 0;
+
+        switch(input_district) {
+            case '서구':
+                return_val = seo_gu.length;
+                break;
+            case '중구':
+                return_val = jung_gu.length;
+                break;
+            case '유성구':
+                return_val = yuseong_gu.length;
+                break;
+            case '동구':
+                return_val = dong_gu.length;
+                break;
+            case '대덕구':
+                return_val = daedeok_gu.length;
+                break;
+            default:
+                break;
+        }
+
+        return return_val;
     }
 </script>
