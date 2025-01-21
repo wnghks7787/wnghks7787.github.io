@@ -6,36 +6,25 @@
         <meta name="viewpoint" content="width = device-width, initial-scale=1.0">
     </head>
     <body>
-        <button type="button" onclick="change_district()">ROLL!!</button>
+        <button type="button" onclick="change_district()">어느 구를 갈까요?</button>
+        <button type="button" onclick="change_neighborhood()">어느 동을 갈까요?</button>
         <p id="district"></p>
     </body>
 </HTML>
 
 <script>
-    function change_district() {
-        const random_num = Math.floor(Math.random() * 5);
-        let district = '';
+    const districts = ['서구', '중구', '유성구', '동구', '대덕구'];
+    let district = '';
 
-        switch (random_num) {
-            case 0:
-                district = '서구';
-                break;
-            case 1:
-                district = '중구';
-                break;
-            case 2:
-                district = '유성구';
-                break;
-            case 3:
-                district = '동구';
-                break;
-            case 4:
-                district = '대덕구';
-                break;
-            default:
-                district = "Error. Please contact developer";
-                break;
-        }
+    function change_district() {
+        let random_num = Math.floor(Math.random() * 5);
+
+        district = districts[random_num];
+
         document.getElementById("district").innerHTML = district;
+    }
+
+    function change_neighborhood() {
+
     }
 </script>
