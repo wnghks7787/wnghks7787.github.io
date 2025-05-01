@@ -1,5 +1,7 @@
 .slotmachine_button {
     background-color: antiquewhite;
-    width: 120px;
-    height: 40px;
+    width: 35%;
+    height: 80px;
+    margin: 20px;
+    display: inline-block;
 }
